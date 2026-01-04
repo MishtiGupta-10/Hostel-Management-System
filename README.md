@@ -58,6 +58,7 @@ The system supports student records, room allocation, attendance, complaints, no
 
 ## Project Structure
 
+<pre>
 Hostel-Management-System/
 │
 ├── *.php # Core application logic
@@ -68,8 +69,9 @@ Hostel-Management-System/
 ├── connect.sample.php
 ├── README.md
 └── .gitignore
+</pre>
 
-> A flat PHP file structure is used to keep routing simple in a non-framework environment.
+<p> A flat PHP file structure is used to keep routing simple in a non-framework environment.</p>
 
 ---
 
