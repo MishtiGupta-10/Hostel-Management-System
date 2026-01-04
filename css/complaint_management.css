@@ -1,0 +1,345 @@
+/* ===== General Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Theme Variables (Same as index.css) ===== */
+:root {
+  --bg-color: #F7F7F7;
+  --accent-color: #393E46;
+  --accent-light: #929AAB;
+  --section-light: #EEEEEE;
+  --text-color: #1A1A1A;
+  --white: #ffffff;
+
+  --primary-btn: #393E46;
+  --primary-btn-hover: #929AAB;
+
+  --shadow: rgba(0, 0, 0, 0.12);
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-color);
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+}
+
+/* ===== Header/Navbar ===== */
+.header {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px var(--shadow);
+  padding: 1rem 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--accent-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--accent-light);
+}
+
+/* Logout button - matches old theme */
+.nav a:last-child {
+  background: var(--accent-color);
+  color: var(--white);
+  padding: 0.5rem 1.3rem;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav a:last-child:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+  color: var(--white);
+}
+
+/* ===== Main Content ===== */
+.main-content {
+  flex: 1;
+  padding: 3rem 2rem;
+}
+
+.main-content h1 {
+  text-align: center;
+  color: var(--accent-color);
+  font-size: 2rem;
+  margin-bottom: 1.8rem;
+}
+
+.main-content h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: var(--accent-color);
+  margin: 0.6rem auto;
+  border-radius: 2px;
+}
+
+/* ===== Filter Section ===== */
+.filter-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.filter-section label {
+  font-weight: 500;
+}
+
+.filter-section select {
+  padding: 0.6rem;
+  border: 1px solid var(--accent-light);
+  border-radius: 8px;
+  background: var(--white);
+  outline: none;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.filter-section select:focus {
+  border-color: var(--accent-color);
+}
+
+/* ===== Table Container ===== */
+.table-container {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px var(--shadow);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+thead {
+  background: var(--accent-color);
+  color: var(--white);
+}
+
+thead th {
+  padding: 1rem;
+  text-align: left;
+}
+
+tbody tr {
+  background: var(--white);
+  border-bottom: 1px solid var(--section-light);
+  transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+  background: #f0f0f0;
+}
+
+tbody td {
+  padding: 0.9rem;
+}
+
+/* ===== Status Labels ===== */
+.status {
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+}
+
+.status.pending {
+  background: #e08e0b;
+}
+
+.status.resolved {
+  background: #28a745;
+}
+
+/* ===== Buttons ===== */
+button {
+  border: none;
+  cursor: pointer;
+  padding: 0.45rem 0.8rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Resolve Button */
+.resolve-btn {
+  background: var(--accent-color);
+  color: white;
+}
+
+.resolve-btn:hover:not([disabled]) {
+  background: var(--primary-btn-hover);
+  transform: translateY(-2px);
+}
+
+.resolve-btn:disabled {
+  background: #8b8b8b;
+  cursor: not-allowed;
+}
+
+/* Remark Button */
+.remark-btn {
+  background: #5bc0de;
+  color: white;
+}
+
+.remark-btn:hover {
+  background: #31b0d5;
+  transform: translateY(-2px);
+}
+
+/* ===== Modal ===== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(4px);
+
+  justify-content: center;
+  align-items: center;
+  z-index: 300;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 450px;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px var(--shadow);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content h2 {
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+#remarkText {
+  width: 100%;
+  height: 120px;
+  padding: 0.8rem;
+  border: 1px solid var(--accent-light);
+  border-radius: 10px;
+  outline: none;
+  resize: none;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.modal-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-actions button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+}
+
+#saveRemarkBtn {
+  background: var(--accent-color);
+  color: var(--white);
+}
+
+#saveRemarkBtn:hover {
+  background: var(--primary-btn-hover);
+  transform: translateY(-2px);
+}
+
+#closeModalBtn {
+  background: var(--section-light);
+  color: var(--accent-color);
+}
+
+#closeModalBtn:hover {
+  background: var(--accent-light);
+  color: white;
+}
+
+/* ===== Footer (Sticks to Bottom) ===== */
+footer {
+  margin-top: auto;
+  background: #8E9195;
+  color: #F7F7F7;
+  text-align: center;
+  padding: 1.8rem 0;
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .filter-section {
+    flex-direction: column;
+  }
+
+  table {
+    min-width: 900px;
+  }
+}

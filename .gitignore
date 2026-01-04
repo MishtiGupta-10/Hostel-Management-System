@@ -1,0 +1,6 @@
+/wamp64/
+/*.log
+/connect.php
+/vendor/
+/node_modules/
+.env

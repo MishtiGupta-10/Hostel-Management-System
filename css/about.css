@@ -1,0 +1,200 @@
+/* ===== General Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Theme Variables ===== */
+:root {
+  --bg-color: #F7F7F7;
+  --accent-color: #393E46;
+  --accent-light: #929AAB;
+  --section-light: #EEEEEE;
+  --text-color: #1A1A1A;
+  --white: #ffffff;
+
+  --primary-btn: #393E46;
+  --primary-btn-hover: #929AAB;
+
+  --shadow: rgba(0, 0, 0, 0.12);
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-color);
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px var(--shadow);
+  padding: 1rem 3rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--accent-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-light);
+}
+
+/* Logout button (black oval) */
+.nav-links .btn {
+  background: var(--primary-btn);
+  color: var(--white);
+  padding: 0.5rem 1.3rem;
+  border-radius: 25px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links .btn:hover {
+  background: var(--primary-btn-hover);
+  transform: translateY(-2px);
+}
+
+/* ===== About Section ===== */
+.about-section {
+  flex: 1;
+  padding: 3rem 2rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px var(--shadow);
+  animation: fadeIn 0.7s ease;
+}
+
+.about-section h1 {
+  font-size: 2rem;
+  color: var(--accent-color);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-section h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: var(--accent-color);
+  margin: 0.7rem auto;
+  border-radius: 2px;
+}
+
+.about-section p,
+.about-section ul {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.about-section ul li {
+  margin-bottom: 0.6rem;
+}
+
+/* Subheadings */
+.about-section h2 {
+  color: var(--accent-color);
+  margin-top: 1.5rem;
+  margin-bottom: 0.7rem;
+  font-size: 1.4rem;
+}
+
+/* ===== Team Section ===== */
+.team {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.member {
+  background: var(--section-light);
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px var(--shadow);
+  width: calc(33% - 1rem);
+}
+
+.member h3 {
+  color: var(--accent-color);
+  margin-bottom: 0.4rem;
+}
+
+.member p {
+  color: var(--text-color);
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #8E9195;
+  color: #F7F7F7;
+  text-align: center;
+  padding: 1.8rem 0;
+  font-size: 0.9rem;
+  margin-top: auto;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .team {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .member {
+    width: 90%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

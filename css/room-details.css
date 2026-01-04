@@ -1,0 +1,197 @@
+/* ===== Import Font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===== Root Theme (Same as index.css) ===== */
+:root {
+  --bg-color: #F7F7F7;
+  --accent-color: #393E46;
+  --accent-light: #929AAB;
+  --section-light: #EEEEEE;
+  --text-color: #1A1A1A;
+  --primary-btn: #393E46;
+  --primary-btn-hover: #929AAB;
+  --white: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.12);
+}
+
+/* ===== General Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px var(--shadow);
+  padding: 1rem 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--accent-color);
+  margin-left: 2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent-light);
+}
+
+.logout-btn {
+  background-color: var(--primary-btn);
+  color: var(--white) !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.logout-btn:hover {
+  background-color: var(--primary-btn-hover);
+  transform: translateY(-2px);
+}
+
+/* ===== Container ===== */
+.container {
+  max-width: 900px;
+  margin: 3rem auto;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px var(--shadow);
+  animation: fadeIn 1s ease;
+}
+
+.container h1 {
+  text-align: center;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+}
+
+/* ===== Room Info Section ===== */
+.room-info {
+  padding: 2rem;
+  background: var(--section-light);
+  border-radius: 15px;
+  box-shadow: 0 2px 6px var(--shadow);
+}
+
+.info-item {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.info-item strong {
+  color: var(--accent-color);
+}
+
+/* ===== Divider ===== */
+.divider {
+  margin: 2.5rem 0;
+  border: none;
+  height: 2px;
+  background: var(--accent-light);
+  border-radius: 20px;
+}
+
+/* ===== Request Section ===== */
+.request-section h2 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.request-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--accent-light);
+  border-radius: 15px;
+  outline: none;
+  resize: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 8px rgba(57, 62, 70, 0.25);
+}
+
+/* ===== Button ===== */
+.btn {
+  background-color: var(--primary-btn);
+  color: var(--white);
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: fit-content;
+}
+
+.btn:hover {
+  background-color: var(--primary-btn-hover);
+  transform: translateY(-2px);
+}
+
+/* ===== Footer ===== */
+footer {
+  margin-top: 4rem;
+  background: #8E9195;
+  color: #F7F7F7;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .nav-links a {
+    margin-left: 1rem;
+  }
+}

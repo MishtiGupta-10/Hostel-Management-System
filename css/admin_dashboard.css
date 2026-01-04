@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #f7f7f7;
+  /* Ultra light grey */
+  --accent-color: #393e46;
+  /* Graphite dark */
+  --accent-light: #929aab;
+  /* Steel grey hover */
+  --section-light: #eeeeee;
+  /* Light grey section background */
+  --text-color: #1a1a1a;
+  /* Deep dark text */
+  --primary-btn: #393e46;
+  /* Strong dark button */
+  --primary-btn-hover: #929aab;
+  /* Soft grey hover */
+  --white: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.12);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}/* =========================
+   GLOBAL RESET + THEME
+   ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #F7F7F7;
+  --accent-color: #393E46;      /* Dark graphite */
+  --accent-light: #929AAB;      /* Soft grey hover */
+  --section-light: #EEEEEE;
+  --text-color: #1A1A1A;
+  --primary-btn: #393E46;
+  --primary-btn-hover: #929AAB;
+  --white: #ffffff;
+  --shadow: rgba(0,0,0,0.12);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+
+/* =========================
+   HEADER / NAV
+   ========================= */
+header {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px var(--shadow);
+  padding: 1rem 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  transition: transform 0.3s ease;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--accent-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent-light);
+}
+
+.nav-links .btn {
+  background-color: var(--primary-btn);
+  color: var(--white);
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links .btn:hover {
+  background-color: var(--primary-btn-hover);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+/* =========================
+   MAIN CONTAINER
+   ========================= */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+#greeting {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 1.8rem;
+}
+
+
+/* =========================
+   SUMMARY CARDS (Updated)
+   ========================= */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.card {
+  background: rgba(255,255,255,0.92);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px var(--shadow);
+  border: 1px solid #e3e3e3;
+  transition: 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  color: var(--accent-light);
+  margin-bottom: 0.8rem;
+}
+
+.card p {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+
+/* =========================
+   NAV BUTTONS (Converted)
+   ========================= */
+.nav-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 1.2rem;
+}
+.btn {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--primary-btn);
+  color: var(--white);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--primary-btn-hover);
+  transform: translateY(-2px);
+}
+
+.btn[href="index.html"] {
+  background-color: #e74c3c;
+  color: #fff;
+  border-color: #e74c3c;
+}
+
+.btn[href="index.html"]:hover {
+  background-color: #c0392b;
+}
+
+
+/* =========================
+   FOOTER (Reference Style)
+   ========================= */
+footer {
+  background: #8E9195;
+  color: var(--white);
+  text-align: center;
+  padding: 1.8rem 0;
+  font-size: 0.9rem;
+  margin-top: 2.5rem;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #greeting {
+    font-size: 1.6rem;
+  }
+
+  .card p {
+    font-size: 1.9rem;
+  }
+
+  .nav-buttons {
+    grid-template-columns: 1fr;
+  }
+}

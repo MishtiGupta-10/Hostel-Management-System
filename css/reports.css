@@ -1,0 +1,238 @@
+/* ===== General Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Root Theme (Same as index.css) ===== */
+:root {
+  --bg-color: #F7F7F7;
+  --accent-color: #393E46;
+  --accent-light: #929AAB;
+  --section-light: #EEEEEE;
+  --text-color: #1A1A1A;
+  --primary-btn: #393E46;
+  --primary-btn-hover: #929AAB;
+  --white: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Body ===== */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Navbar (Matches index.css) ===== */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1rem 3rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--accent-color);
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  color: var(--accent-light);
+}
+
+.nav-links .btn,
+.logout-btn {
+  background-color: var(--primary-btn);
+  color: var(--white) !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links .btn:hover,
+.logout-btn:hover {
+  background-color: var(--primary-btn-hover);
+  transform: translateY(-2px);
+}
+
+
+/* ===== Main Container ===== */
+.container {
+  padding: 3rem 4rem;
+  flex: 1;
+}
+
+.container h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+}
+
+/* ===== Report Controls ===== */
+.report-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background: var(--section-light);
+  padding: 1.2rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.report-controls label {
+  font-weight: 500;
+  color: var(--accent-color);
+}
+
+.report-controls select {
+  padding: 0.7rem 1rem;
+  border-radius: 20px;
+  border: 1px solid var(--accent-light);
+  outline: none;
+  font-size: 0.95rem;
+  background: var(--white);
+  transition: 0.3s ease;
+}
+
+.report-controls select:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 6px rgba(57, 62, 70, 0.3);
+}
+
+/* ===== Buttons ===== */
+.btn {
+  padding: 0.75rem 1.4rem;
+  border: none;
+  border-radius: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  color: var(--white);
+}
+
+.generate-btn {
+  background: var(--primary-btn);
+}
+
+.generate-btn:hover {
+  background: var(--primary-btn-hover);
+  transform: translateY(-2px);
+}
+
+.download-btn {
+  background: #5d6169;
+}
+
+.download-btn:hover {
+  background: #7d838c;
+  transform: translateY(-2px);
+}
+
+/* ===== Report Content Card ===== */
+.report-content {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 12px var(--shadow);
+  min-height: 250px;
+}
+
+.placeholder {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--accent-light);
+}
+
+/* ===== Tables (Consistent with theme) ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  box-shadow: 0 2px 10px var(--shadow);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead {
+  background: var(--accent-color);
+  color: var(--white);
+}
+
+thead th {
+  padding: 1rem;
+  font-weight: 500;
+}
+
+tbody tr {
+  transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+  background: var(--section-light);
+}
+
+tbody td {
+  padding: 1rem;
+  border-bottom: 1px solid #dddddd;
+  font-size: 0.95rem;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===== Footer (Always at Bottom) ===== */
+footer {
+  background: #8E9195;
+  color: #F7F7F7;
+  text-align: center;
+  padding: 1.8rem 0;
+  font-size: 0.9rem;
+  margin-top: auto;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .report-controls {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .container {
+    padding: 2rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+}

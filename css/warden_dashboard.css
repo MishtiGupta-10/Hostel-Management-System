@@ -1,0 +1,204 @@
+/* ===== General Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Root Theme (Matching index.css grey palette) ===== */
+:root {
+  --bg-color: #F7F7F7;
+  --accent-color: #393E46;
+  --accent-light: #929AAB;
+  --section-light: #EEEEEE;
+  --text-color: #1A1A1A;
+  --primary-btn: #393E46;
+  --primary-btn-hover: #929AAB;
+  --white: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.12);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+
+  /* NEW — makes footer stick to bottom */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard {
+  padding: 3rem 2rem;
+  text-align: center;
+
+  /* NEW — ensures content grows and footer goes down */
+  flex: 1;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1rem 3rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0%;
+  padding: 0%;
+  gap: 1.8rem;
+}
+
+/* Only Home + Logout stay here */
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--accent-color);
+  transition: 0.3s ease;
+}
+
+/* Black Button Style (Same as Index Login Button) */
+.logout-btn,
+.nav-links .active {
+  background: var(--primary-btn);
+  color: var(--white) !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  transition: 0.3s ease;
+}
+
+.logout-btn:hover,
+.nav-links .active:hover {
+  background: var(--primary-btn-hover);
+  transform: translateY(-2px);
+}
+
+/* ===== Dashboard Section ===== */
+.dashboard {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.dashboard h1 {
+  font-size: 2.2rem;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+}
+
+/* ===== Summary Cards ===== */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+}
+
+.card {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 2px 10px var(--shadow);
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  color: var(--accent-color);
+  margin-bottom: 0.8rem;
+}
+
+.card p {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+/* ===== Bottom Menu (Clean, No Footer Gap, Black Buttons) ===== */
+.bottom-menu {
+  width: 100%;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.bottom-menu a {
+  background: var(--primary-btn);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.7rem 1.4rem;
+  border-radius: 25px;
+  box-shadow: 0 2px 6px var(--shadow);
+  transition: 0.3s ease;
+}
+
+.bottom-menu a:hover {
+  background: var(--primary-btn-hover);
+  transform: translateY(-2px);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #8E9195;
+  color: #F7F7F7;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.3rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+.bottom-menu {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 0;
+}
+
+.menu-btn {
+    background: var(--primary-btn);
+    color: var(--white);
+    padding: 0.7rem 1.4rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.menu-btn:hover {
+    background: var(--primary-btn-hover);
+    transform: translateY(-2px);
+}
+}

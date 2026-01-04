@@ -1,0 +1,286 @@
+/* ===== General Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Theme Variables ===== */
+:root {
+  --bg-color: #F7F7F7;
+  --accent-color: #393E46;
+  --accent-light: #929AAB;
+  --section-light: #EEEEEE;
+  --text-color: #1A1A1A;
+  --white: #ffffff;
+
+  --primary-btn: #393E46;
+  --primary-btn-hover: #929AAB;
+
+  --shadow: rgba(0, 0, 0, 0.12);
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-color);
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem 3rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Buttons inside navbar */
+.nav-btn {
+  border: none;
+  padding: 0.5rem 1.3rem;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Home button (light) */
+/* Home button should look like a normal nav link */
+.home-btn {
+  background: none;
+  color: var(--accent-color);
+  border: none;
+  padding: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.home-btn:hover {
+  color: var(--accent-light);
+  transform: none;  /* remove lift effect */
+}
+
+/* Logout button (black oval) */
+.logout-btn {
+  background: var(--primary-btn);
+  color: var(--white);
+}
+
+.logout-btn:hover {
+  background: var(--primary-btn-hover);
+  transform: translateY(-2px);
+}
+
+/* ===== Main Container ===== */
+.container {
+  flex: 1;
+  padding: 3rem 2rem;
+}
+
+.container h1 {
+  text-align: center;
+  color: var(--accent-color);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.container h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: var(--accent-color);
+  margin: 0.7rem auto;
+  border-radius: 3px;
+}
+
+/* ===== Filters ===== */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filters input {
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--accent-light);
+  background: var(--white);
+  outline: none;
+  font-size: 0.95rem;
+  width: 260px;
+  transition: border 0.3s;
+}
+
+.filters input:focus {
+  border-color: var(--accent-color);
+}
+
+.clear-btn {
+  padding: 8px 15px;
+  background: #ccc;
+  color: black;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.clear-btn:hover {
+  background: #bbb;
+}
+
+/* Filter Bar Container */
+.filter-form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Search Input */
+.search-input {
+    padding: 10px 14px;
+    width: 280px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Search Button */
+.search-btn {
+    background-color: #333;          /* dark grey / nearly black */
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.25s ease;
+}
+
+.search-btn:hover {
+    background-color: #555;          /* lighter grey on hover */
+}
+
+
+/* Clear Button (RED) */
+.clear-btn {
+    background-color: #e63946;      /* DARK RED */
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.25s ease;
+}
+
+.clear-btn:hover {
+    background-color: #cc2f3b;
+}
+
+
+/* ===== Table Styling ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px var(--shadow);
+}
+
+thead {
+  background: var(--accent-color);
+  color: white;
+}
+
+thead th {
+  padding: 1rem;
+  text-align: left;
+  font-size: 1rem;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--section-light);
+  transition: background 0.25s ease;
+}
+
+tbody tr:hover {
+  background: #f0f0f0;
+}
+
+tbody td {
+  padding: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+/* ===== Responsive Table ===== */
+@media (max-width: 768px) {
+  table,
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    display: block;
+    background: var(--white);
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px var(--shadow);
+  }
+
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    padding: 0.6rem 0;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--accent-color);
+  }
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #8E9195;
+  color: #F7F7F7;
+  text-align: center;
+  padding: 1.8rem 0;
+  font-size: 0.9rem;
+  margin-top: auto;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}

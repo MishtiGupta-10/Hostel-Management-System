@@ -1,0 +1,309 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Root Theme Variables ===== */
+:root {
+  --bg-color: #f7f7f7;
+  --accent-color: #393e46;
+  --accent-light: #929aab;
+  --section-light: #eeeeee;
+  --text-color: #1a1a1a;
+  --primary-btn: #393e46;
+  --primary-btn-hover: #929aab;
+  --white: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Body ===== */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===== Header / Navbar ===== */
+header {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px var(--shadow);
+  padding: 1rem 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  transition: transform 0.3s ease;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--accent-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent-light);
+}
+
+.nav-links .btn {
+  background-color: var(--primary-btn);
+  color: var(--white);
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links .btn:hover {
+  background-color: var(--primary-btn-hover);
+  transform: translateY(-2px);
+}
+
+/* ===== Main Container ===== */
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  background: var(--section-light);
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+  font-size: 28px;
+}
+
+.container h1{
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+  font-size: 32px;
+}
+
+/* ===== Mess Info Section ===== */
+.mess-info {
+  background: var(--white);
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--shadow);
+  margin-bottom: 25px;
+}
+
+/* ===== Table Styling ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--white);
+  box-shadow: 0 2px 10px var(--shadow);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: var(--accent-color);
+  color: var(--white);
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background-color: var(--section-light);
+}
+
+tr:hover {
+  background-color: #e3e6ea;
+  transition: background 0.3s ease;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  background-color: var(--primary-btn);
+  color: var(--white);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--primary-btn-hover);
+  transform: translateY(-2px);
+}
+
+/* Centered area for main action button */
+.button-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* ===== Modal Popup ===== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 4px 15px var(--shadow);
+  animation: popIn 0.25s ease;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.close-btn {
+  float: right;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--accent-color);
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: var(--accent-light);
+}
+
+/* Form inside modal */
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.modal-content input,
+.modal-content textarea {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  background: #fafafa;
+  outline: none;
+}
+
+.modal-content button {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.fees-section  p {
+  margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.feedback-btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#openModalBtn {
+  margin-top: 15px;
+  font-family: 'Poppins', sans-serif;
+  align-items: center;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #8e9195;
+  color: var(--white);
+  text-align: center;
+  padding: 1.8rem 0;
+  font-size: 0.9rem;
+  margin-top: 40px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .container {
+    width: 92%;
+    padding: 2rem 1.5rem;
+  }
+
+  table thead {
+    display: none;
+  }
+
+  table tr {
+    display: block;
+    background: #fafafa;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+  }
+
+  table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #555;
+  }
+}

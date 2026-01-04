@@ -1,0 +1,233 @@
+/* ===== Import Font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===== Root Colors (Same as index.css) ===== */
+:root {
+  --bg-color: #F7F7F7;
+  --accent-color: #393E46;
+  --accent-light: #929AAB;
+  --section-light: #EEEEEE;
+  --text-color: #1A1A1A;
+  --primary-btn: #393E46;
+  --primary-btn-hover: #929AAB;
+  --white: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px var(--shadow);
+  padding: 1rem 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+/* Navbar links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--accent-color);
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+/* ===== Home Button (Styled like index.css button) ===== */
+.nav-links a:not(.logout-btn) {
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  background: var(--primary-btn);
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+  color: #F7F7F7;
+}
+
+.nav-links a:not(.logout-btn):hover {
+  background: var(--accent-light);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* ===== Logout Button (matches index.css) ===== */
+.logout-btn {
+  background-color: var(--primary-btn);
+  color: var(--white) !important;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.logout-btn:hover {
+  background-color: var(--primary-btn-hover);
+  transform: translateY(-2px);
+}
+
+/* ===== Container ===== */
+.container {
+  max-width: 900px;
+  margin: 3rem auto;
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px var(--shadow);
+  animation: fadeIn 1s ease;
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--accent-color);
+}
+
+/* ===== Form ===== */
+.form-container {
+  background: var(--section-light);
+  padding: 1.8rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px var(--shadow);
+  margin-bottom: 3rem;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--accent-color);
+}
+
+select,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 2px solid var(--accent-light);
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+  margin-bottom: 1.3rem;
+  background: var(--white);
+}
+
+select:focus,
+textarea:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 8px rgba(57, 62, 70, 0.25);
+}
+
+/* Submit Button */
+.btn-submit {
+  background-color: var(--primary-btn);
+  color: var(--white);
+  padding: 0.8rem 1.4rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: var(--primary-btn-hover);
+  transform: translateY(-2px);
+}
+
+/* ===== Table Section ===== */
+.container h2 {
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.table-container {
+  overflow-x: auto;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+}
+
+th {
+  background: var(--accent-color);
+  color: var(--white);
+  padding: 0.9rem;
+  font-size: 1rem;
+}
+
+td {
+  padding: 0.9rem;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover {
+  background-color: #f3f3f3;
+}
+
+/* ===== Footer ===== */
+footer {
+  margin-top: 4rem;
+  text-align: center;
+  padding: 1.6rem 0;
+  background: #8E9195;
+  color: #F7F7F7;
+  font-size: 0.9rem;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+}
